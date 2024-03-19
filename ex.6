@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+// Função que calcula a expressão fornecida para um valor de n
+double calcularExpressao(int n) {
+    double resultado = 0;
+    int sinal = 1;
+
+    for (int k = 1; k <= n; ++k) {
+        resultado += sinal * ((double)k / (k * k));
+        sinal *= -1;
+    }
+
+    return resultado;
+}
+
+int main() {
+    int n;
+
+    // Solicita que o usuário digite um valor numérico
+    printf("Digite um valor numerico: ");
+    scanf("%d", &n);
+
+    // Chama a função para calcular a expressão e imprime o resultado
+    double resultado = calcularExpressao(n);
+    printf("O resultado da expressao para n = %d eh: %.15lf\n", n, resultado);
+
+    return 0;
+}
